@@ -1,0 +1,182 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* Theme base Colors 
+ * https://kuler.adobe.com/Birdfolio-Blues-color-theme-1945976/
+ */
+
+
+$darkest: #2B3A42;
+$dark: #3F5765;
+$base: #BDD4DE;
+$lightest: #EFEFEF;
+$highlight: #FF530D;
+
+body {
+    padding: {
+    	top: 80px;
+    	bottom: 60px;
+	}
+	color: $darkest;
+	background:{
+		color: $lightest;
+		image: url(../img/bg_green_light.jpg)
+	}
+}
+
+h1, h2, h3, h4 {color: $dark;}
+h1{
+	color: darken($base, 30%);
+	font-size: 24px;
+	border-bottom: 1px solid $lightest;
+
+	small{ font-size: 18px}
+}
+
+/* Layout Components { */
+#topbar {
+	padding: 10px;
+	background: {
+		image: -webkit-gradient(linear,0 0,0 100%,from($darkest),to($dark));
+		image: linear-gradient(to bottom, $darkest, $dark);
+		color: $dark;
+	}
+
+
+}
+
+#sidebar {
+	background-color: rgba($dark, 0.3);
+	margin: -20px;
+	padding: 15px;
+	border-right: 2px solid rgba($dark, 0.5);
+}
+
+#page {
+	padding-left: 20px;
+}
+
+/* } Layout Components  */
+
+/* Specific Elements { */
+#goto{
+	text-align: center;
+
+	#goto-no {
+		width: 161px;
+		margin-right: 9px;
+	}
+}
+
+#search{
+	position: relative;
+	padding-right: 15px;
+
+	#q { 
+		padding-right: 90px; 
+		width: 200px;
+	}
+	.nav {
+		position: absolute;
+		left: 205px;
+		z-index: 9;
+		top: -5px;
+	}
+	.dropdown-toggle {
+		background-color: transparent;
+	}
+}
+
+/* } Specific Elements */
+
+.widget {
+	background-color: $base;
+	border: 2px solid $darkest;
+	color: $darkest;
+	padding: 20px 12px 12px;
+	border-radius: 6px;
+	margin: 25px 0 10px;
+	position: relative;
+
+	.title{
+		position: absolute;
+		font-size: 14px;
+		top: -23px;
+		background-color: $darkest;
+		padding: 0px 8px;
+		line-height: 24px;
+		border-radius: 5px;
+		color: $base;
+	}
+
+	form {
+		margin-bottom: 5px; 
+	}
+}
+
+#chapters {
+	clear: both;
+
+	li {
+		float: left;
+		width: 180px;
+		margin: 10px 20px;
+
+		a {
+			display: block;			
+			padding: 10px;
+
+			span {
+				width: 100%;
+				overflow: hidden;
+				white-space: nowrap;
+				text-decoration: none;
+				text-overflow: ellipsis;
+				display: block;
+				border-top: 1px dashed gray;
+				padding: 3px;
+
+				&:first-child{ padding-top: 0; border-top: none; }
+				&:last-child{ padding-bottom: 0;}
+			}
+
+		}
+		:hover {
+			color: $highlight;
+		}
+	}
+
+}
+
+.bangla{font-family: Arial}
+.arabic{font-family: Vardana; direction: rtl}
+
+.hero-unit {
+	background-color: rgba(200,200,200, .4);
+	padding: 30px;
+}
+
+.nav {
+	.hint {
+		color: #888;
+		padding: 10px 5px 10px 15px
+	}
+	.v-divider {
+		padding: 20px 0;
+		border-right: 1px inset;
+	}
+}
+.navbar-inverse .brand {
+	color: $lightest;
+	font-weight: bold;
+	margin-left: -6px;
+}
+
+
+
+
+
+
+

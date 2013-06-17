@@ -1,0 +1,194 @@
+<?php
+header("Content-type: text/plain;charset=utf-8");
+?>
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/uniform.aristo.css">
+        <link rel="stylesheet" href="css/main.css">
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner" id="topbar">
+                    <a class="brand" href="#"  onclick="App.helpers.showSection('landing')">iHadith</a>
+                    <div class="nav-collapse collapse">
+                        
+                        <form class="navbar-search pull-right" id="search">
+                            <input class="search-query span2" id="q" type="text" placeholder="Search">
+                            <ul class="nav pull-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search in<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#"><i class="icon-check"></i> All Books</a></li>
+                                        <li class="divider"></li>                                    
+                                        <li class="nav-header">Authentic 6</li>
+                                        <li><a href="#"><i class="icon-check-empty"></i> Sahih al-Bukhari</a></li>
+                                        <li><a href="#"><i class="icon-check-empty"></i> Sahih Muslim</a></li>
+                                        <li><a href="#"><i class="icon-check-empty"></i> Sunan an-Nasa'i</a></li>
+                                        <li><a href="#"><i class="icon-check-empty"></i> Sunane Abi Dawud</a></li>
+                                        <li><a href="#"><i class="icon-check-empty"></i> Jami` at-Tirmidhi</a></li>
+                                        <li><a href="#"><i class="icon-check-empty"></i> Sunan Ib'n Majah</a></li>
+                                        <li class="divider"></li>
+                                        <li class="nav-header">Other</li>
+                                        <li><a href="#"><i class="icon-check-empty"></i> 40 Hadith Nawawi</a></li>
+                                        <li><a href="#"><i class="icon-check-empty"></i> Riyad as-Salihin</a></li>
+                                        <li><a href="#"><i class="icon-check-empty"></i> Bulugh al-Maram</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </form>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" id="main">
+            <div class="row-fluid">
+                <div class="span3" id="sidebar">
+					<div class="widget">
+						<h3 class="title">Language</h3>
+                        <form>
+                            <label class="checkbox"><input class="language uniform" type="checkbox" checked="checked">Bangla <span class="bangla">(বাংলা)</span></label>
+                            <label class="checkbox"><input class="language uniform" type="checkbox">Arabic <span class="bangla">(আরবি)</span></label>
+                            <label class="checkbox"><input class="language uniform" type="checkbox">English</label>
+                      </form>
+					</div>
+
+                    <div class="widget">
+                        <h3 class="title">Go To</h3>
+                        <form id="goto">
+                            <select id="goto-book" class="uniform">
+                                <option>Sahih al-Bukhari</option>
+                                <option>Sahih Muslim</option>
+                                <option>Sunan an-Nasa'i</option>
+                                <option>Sunane Abi Dawud</option>
+                                <option>Jami` at-Tirmidhi</option>
+                                <option>Sunan Ib'n Majah</option>
+                            </select>
+
+                            <input id="goto-no" class="uniform" placeholder="Hadith No.">
+                      </form>
+                    </div>
+                    <div class="widget">
+                        <h3 class="title">Bookmarks</h3>
+                        <p>
+                            <ul class="unstyled">
+                                <li><i class="icon-bookmark"></i><a href="#">Sahih al-Bukhari <span class="badge badge-info">28</span></a></li>
+                                <li><i class="icon-bookmark"></i><a href="#">Sahih Muslim <span class="badge badge-info">8</span></a></li>
+                                <li><i class="icon-bookmark"></i><a href="#">Sunan an-Nasa'i <span class="badge badge-info">2</span></a></li>
+                                <li><i class="icon-bookmark"></i><a href="#">Sunane Abi Dawud <span class="badge badge-info">13</span></a></li>
+                            </ul>
+                        </p>
+                    </div>
+              		
+                </div>
+
+                <div class="span9" id="page">
+                    <section id="landing">
+                    	<div class="hero-unit">
+                            <p class="text-success text-center arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+    		                <h3>Assalamualaikum <small>from iHadith!</small></h3>
+    		                <p>
+                                May Allah give barakah in your time and effort for studying hadith. You can browse by chapters of installed books.
+                            </p>
+    		                <p>
+                                <button type="button" class="btn btn-info" onclick="App.helpers.showSection('book')"><i class="icon-book"></i> Sahih al-Bukhari</button>
+                                <button type="button" class="btn btn-info"><i class="icon-book"></i> Sahih Muslim</button>
+                            </p>
+                            <p>
+                                Also, iHadith have some more hadith books ready for installation -
+                            </p>
+                            <p>
+                                <button type="button" class="btn btn-inverse"><i class="icon-book icon-white"></i> Sunan an-Nasa'i</button>
+                                <button type="button" class="btn btn-inverse"><i class="icon-book icon-white"></i> Sunane Abi Dawud</button>
+                                <button type="button" class="btn btn-inverse"><i class="icon-book icon-white"></i> Jami` at-Tirmidhi</button>
+                                <button type="button" class="btn btn-inverse"><i class="icon-book icon-white"></i> Sunan Ib'n Majah</button>
+                            </p>
+    		            </div>
+
+                        <div class="alert alert-worning">
+                            <h4><i class="icon-warning-sign"></i> Warning!</h4>
+                            <p><br>Expert alims are working on reviewing each and every hadith. But we are not finished reviewing yet. So, please be careful in using hadith translations as reference.</p>
+                        </div>
+                    </section>
+                    <section id="book" style="display: none">
+                        <h1>Sahih al-Bukhari <small>browse by chapters</small></h1>
+                        <ul class="unstyled" id="chapters">
+                            <li><a class="btn" href="#"><span class="lang bangla">ঈমান অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">ইলম অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">উযূ অধ্যায় beyf eufyvqw uqweyf qwueyvf</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">গোসল অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">হায়য অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">তায়াম্মুম অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">সালা অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">ঈমান অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">ইলম অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">উয অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">গোসল অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">হায়য অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">তায়াম্মুম অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">সালা অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">ঈমান অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">ইলম অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">উয অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">গোসল অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#"><span class="lang bangla">হায়য অধ্যায়</span></a></li>
+                            <li><a class="btn" href="#">
+                                <span class="bangla">তায়াম্মুম অধ্যায়</span>
+                                <span class="">english line</span>
+                                <span class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+                                </a></li>
+                        </ul>
+                    </section>
+               </div>
+            </div>
+
+
+            <footer id="footer">
+            	<div class="navbar navbar-fixed-bottom">
+	              <div class="navbar-inner">
+	                <div class="container" style="width: auto; padding: 0 10px;">
+	                  <ul class="nav">
+                        <li class="hint">Cehck:</li>
+                        <li><a href="#"><i class="icon-globe"></i></a></li>
+                        <li><a href="#"><i class="icon-github-alt"></i></a></li>
+                        <li class="v-divider"></li>
+                        <li class="hint">Share:</li>
+                        <li><a href="#"><i class="icon-facebook-sign"></i></a></li>
+                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+	                    <li><a href="#"><i class="icon-google-plus-sign"></i></a></li>
+	                  </ul>
+
+                      <ul class="nav pull-right">
+                        <li><a href="#"><i class="icon-large icon-warning-sign"></i></a></li>
+                        <li><a href="#"><i class="icon-large icon-cogs"></i></a></li>
+                        <li><a href="#"><i class="icon-large icon-question-sign"></i></a></li>
+                      </ul>
+	                </div>
+	              </div>
+	            </div>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <script src="js/vendor/jquery-1.9.1.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/jquery.uniform.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
