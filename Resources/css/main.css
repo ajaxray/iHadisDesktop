@@ -102,17 +102,22 @@ h1 small {
 #chapters li {
   float: left;
   width: 180px;
-  margin: 10px 20px;
 }
 #chapters li a {
+  margin: 10px;
   display: block;
   padding: 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(189, 212, 222, 0.8);
+  background-color: rgba(189, 212, 222, 0.4);
+  color: #3f5765;
+  text-align: center;
+  text-decoration: none;
 }
 #chapters li a span {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
-  text-decoration: none;
   text-overflow: ellipsis;
   display: block;
   border-top: 1px dashed gray;
@@ -126,7 +131,8 @@ h1 small {
   padding-bottom: 0;
 }
 #chapters li :hover {
-  color: #ff530d;
+  background-color: #3f5765;
+  color: #efefef;
 }
 
 .bangla {

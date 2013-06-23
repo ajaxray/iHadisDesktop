@@ -1,0 +1,10 @@
+<h1><%= title %> <small>browse by chapters</small></h1>
+<ul class="unstyled" id="chapters">
+	<% obj.chapters.each(function(chapter) { %>
+	<li>
+        <a href="#">
+        	<%= App.printInActiveLang(chapter.get('title')) %>
+        </a>
+    </li>
+	<% }); %>
+</ul>

@@ -18,33 +18,3 @@ $(document).ready(function(){
 	$(".uniform").uniform({selectAutoWidth: false});
 	$('.bangla').css('font-family', 'sans-serif');
 });
-
-var App = {
-
-	blocks: {
-		main: $('#main'),
-		sidebar: $('#sidebar'),
-		page: $('#page'),
-		footer: $('#footer')
-	},
-
-	helpers: {
-
-		fullheightSidebar: function() {
-			var ht = ($(main).height() > ($(window).height() - 100))? $(main).height() + 40: $(window).height() - 100;
-
-			$(App.blocks.sidebar).css('min-height', ht);
-		},
-
-		showSection: function(id) {
-			$('section').hide();
-			$('#'+id).show();
-		}
-	},
-
-	init: function() {
-		// Fix sidebar height
-		App.helpers.fullheightSidebar();
-		$(window).bind('resize', App.helpers.fullheightSidebar);
-	}
-};
