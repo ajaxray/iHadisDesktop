@@ -1,5 +1,5 @@
 var Book = BaseModel.extend({
-    url: 'book',
+    urlRoot: '/books',
 
 	defaults : {
         'title' : null,

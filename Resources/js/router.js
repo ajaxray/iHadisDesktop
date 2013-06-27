@@ -9,13 +9,22 @@ var AppRouter = Backbone.Router.extend({
 
     initialize: function() {
         _.bindAll(this, 'dashboard');
-
-        this.dashboardView = new DashboardView({collection: App.books});
     },
 
     dashboard: function() {
         console.log('=> dashboard');
-        App.setPage(this.dashboardView);
+
+        if(_.isNull(this.dashboardView)) {
+            // First time
+            var router = this;
+            App.books.fetch({success: function(collection, response, options){
+                router.dashboardView = new DashboardView({collection: App.books});
+                App.setPage(router.dashboardView);
+
+            }});
+        } else {
+            App.setPage(this.dashboardView);
+        }
     },
 
     openBook: function(id) {

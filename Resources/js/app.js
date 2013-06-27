@@ -1,9 +1,5 @@
 var App = function() {
 
-	Backbone.ajax = function(request) {
-		console.log(request);
-	};
-
 	var blocks = {
 		main: $('#main'),
 		sidebar: $('#sidebar'),
@@ -17,6 +13,9 @@ var App = function() {
 	};
 
 	var bindEvents = function() {
+		// Fix sidebar height
+		$(window).bind('resize', fullheightSidebar);
+
 		// Change ative language
 		$('#langs .language').change(function(e){
 			if(this.checked) App.activeLangs.push($(this).val());
@@ -29,20 +28,19 @@ var App = function() {
 		blocks: blocks,
 		apiUrl: null,
 		appRouter: null,
-		books: null,
+		books: new BookCollection(),
 		defaultLang: 'bn',
 		activeLangs: ['bn'],
 		currentPage: null,
+		db: Ti.Database.openFile(Ti.Filesystem.getFile(Ti.Filesystem.getApplicationDataDirectory(), 'hadis.db')),
 
 		init: function() {
-			this.books = new BookCollection([{id: 1, title: 'Sahih al-Bukhari'}, {id: 2, title: 'Sahih Muslim'}]);
 			this.appRouter = new AppRouter();
 
-			// Fix sidebar height
-			$(window).bind('resize', fullheightSidebar);
 			bindEvents();
 
 			blocks.page.empty();
+			fullheightSidebar();
 			Backbone.history.start();
 		},
 
