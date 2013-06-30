@@ -5,12 +5,12 @@ CREATE TABLE books (
 	notes TEXT
 );
 
-CREATE TABLE chapter (
+CREATE TABLE chapters (
 	id INTEGER PRIMARY KEY ASC AUTOINCREMENT,
 	book_id INTEGER REFERENCES book(id),
 	title_bn TEXT,
 	title_en TEXT,
-	title_ar TEXT,
+	title_ar TEXT
 );
 
 CREATE TABLE hadis (

@@ -20,6 +20,10 @@ var App = function() {
 		$('#langs .language').change(function(e){
 			if(this.checked) App.activeLangs.push($(this).val());
 			else             App.activeLangs = _.without(App.activeLangs, $(this).val());
+
+			var checkedLang = $('#langs .language:checked');
+			if(checkedLang.length == 1) checkedLang.attr('disabled', 'disabled');
+			else						checkedLang.removeAttr('disabled');
 			App.currentPage.render();
 		});
 	};

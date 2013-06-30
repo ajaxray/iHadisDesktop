@@ -17,11 +17,9 @@ var AppRouter = Backbone.Router.extend({
         if(_.isNull(this.dashboardView)) {
             // First time
             var router = this;
-            App.books.fetch({success: function(collection, response, options){
-                router.dashboardView = new DashboardView({collection: App.books});
-                App.setPage(router.dashboardView);
-
-            }});
+            App.books.fetch({async: false});
+            this.dashboardView = new DashboardView({collection: App.books});
+            App.setPage(this.dashboardView);
         } else {
             App.setPage(this.dashboardView);
         }
