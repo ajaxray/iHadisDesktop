@@ -3,8 +3,9 @@ var AppRouter = Backbone.Router.extend({
     dashboardView: null,
 
     routes: {
-        ''          : 'dashboard',
-        'book/:id'  : 'openBook'
+        ''              : 'dashboard',
+        'book/:id'      : 'openBook',
+        'chapter/:id'   : 'openChapter'
     },
 
     initialize: function() {
@@ -29,9 +30,19 @@ var AppRouter = Backbone.Router.extend({
         console.log('=> openBook/'+id);
 
         var bookToOpen = App.books.find(function(book) { return book.id == id; });
-        bookToOpen.loadChapters();
+        App.openBook = bookToOpen.loadChapters();
 
-        App.setPage(new BookView({model: bookToOpen}));
+        App.setPage(new BookView({model: App.openBook}));
+    },
+
+    openChapter: function(id) {
+        console.log('=> openChapter/'+id);
+
+        var chapterToOpen = App.openBook.get('chapters')
+                                .find(function(chapter) { return chapter.id == id; });
+        App.openChapter = chapterToOpen.loadHadis();
+
+        App.setPage(new ChapterView({model: App.openChapter}));
     }
 
 });

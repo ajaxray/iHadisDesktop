@@ -33,6 +33,8 @@ var App = function() {
 		apiUrl: null,
 		appRouter: null,
 		books: new BookCollection(),
+		openBook: null,
+		openChapter: null,
 		defaultLang: 'bn',
 		activeLangs: ['bn'],
 		currentPage: null,

@@ -2,7 +2,7 @@
 <ul class="unstyled" id="chapters">
 	<% obj.chapters.each(function(chapter) { %>
 	<li>
-        <a href="#">
+        <a href="#chapter/<%= chapter.get('id') %>">
         	<%= App.printInActiveLang(chapter.get('title')) %>
         </a>
     </li>

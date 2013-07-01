@@ -8,6 +8,12 @@ var Hadis = BaseModel.extend({
 			'bn' : '',
 			'en' : ''
         }
+    },
+
+    parse: function (response, options) {
+        response = this.groupLangField(response, 'content');
+
+        return response;
     }
 
 });
