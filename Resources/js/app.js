@@ -12,6 +12,12 @@ var App = function() {
 		$(App.blocks.sidebar).css('min-height', ht);
 	};
 
+	var prepareLayout = function(loaded_books) {
+		Goto.renderWidget();
+
+		fullheightSidebar();
+	};
+
 	var bindEvents = function() {
 		// Fix sidebar height
 		$(window).bind('resize', fullheightSidebar);
@@ -25,7 +31,12 @@ var App = function() {
 			if(checkedLang.length == 1) checkedLang.attr('disabled', 'disabled');
 			else						checkedLang.removeAttr('disabled');
 			App.currentPage.render();
+			App.reloadFonts();
 		});
+
+		// Bind events of specific feature
+		Search.bindEvents();
+		Goto.bindEvents();
 	};
 
 	return {
@@ -42,19 +53,26 @@ var App = function() {
 
 		init: function() {
 			this.appRouter = new AppRouter();
+			this.books.fetch({async: false});
 
+			prepareLayout();
 			bindEvents();
 
 			blocks.page.empty();
-			fullheightSidebar();
 			Backbone.history.start();
 		},
 
 		setPage: function(view) {
 			if(this.currentPage) this.currentPage.close();
-			view.render().$el.appendTo(blocks.page);
 
-			this.currentPage = view;
+			if(typeof view == 'object') {
+				view.render().$el.appendTo(blocks.page);
+				this.currentPage = view;
+			} else {
+				// Sometimes it can be just a string
+				blocks.page.html(view);
+			}
+			this.reloadFonts();
 		},
 
 		printInActiveLang: function(data) {
@@ -67,6 +85,9 @@ var App = function() {
 			});
 			return output;
 
+		},
+		reloadFonts: function() {
+			$('.bn').css('font-family', 'kalpurush');
 		}
 	};
 }();

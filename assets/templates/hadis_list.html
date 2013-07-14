@@ -1,0 +1,8 @@
+<ul class="unstyled" id="hadises">
+	<% hadises.each(function(hadis) { %>
+	<li>
+		<div class="reference"><span class="bn"><%= getBook(hadis.get('book_id')).get('title') +' ► '+ num(hadis.get('serial_no')) %></span></div>
+    	<%= App.printInActiveLang(hadis.get('content')) %>
+    </li>
+	<% }); %>
+</ul>

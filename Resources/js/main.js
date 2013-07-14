@@ -16,5 +16,5 @@ $(document).ready(function(){
 	App.init();
 	//$("select, input, a.button, button").uniform();
 	$(".uniform").uniform({selectAutoWidth: false});
-	$('.bangla').css('font-family', 'sans-serif');
+	$('.bn').css('font-family', 'sans-serif');
 });

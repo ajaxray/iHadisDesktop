@@ -6,6 +6,7 @@ var AppRouter = Backbone.Router.extend({
         ''              : 'dashboard',
         'book/:id'      : 'openBook',
         'chapter/:id'   : 'openChapter'
+        //'bookmarks/:book_id':
     },
 
     initialize: function() {
@@ -18,7 +19,7 @@ var AppRouter = Backbone.Router.extend({
         if(_.isNull(this.dashboardView)) {
             // First time
             var router = this;
-            App.books.fetch({async: false});
+
             this.dashboardView = new DashboardView({collection: App.books});
             App.setPage(this.dashboardView);
         } else {
@@ -44,5 +45,4 @@ var AppRouter = Backbone.Router.extend({
 
         App.setPage(new ChapterView({model: App.openChapter}));
     }
-
 });

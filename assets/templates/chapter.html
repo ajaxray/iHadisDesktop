@@ -1,8 +1,2 @@
-<h1><%= App.printInActiveLang(title) %> <small> | browse hadis by chapter</small></h1>
-<ul class="unstyled" id="chapters">
-	<% obj.hadises.each(function(hadis) { %>
-	<li>
-    	<%= App.printInActiveLang(hadis.get('content')) %>
-    </li>
-	<% }); %>
-</ul>
+<h1 id="chapter-title"><%= App.printInActiveLang(title) %> <small> | browse hadis by chapter</small></h1>
+<% print(_.template(Templates.hadis_list, { hadises: obj.hadises })) %>

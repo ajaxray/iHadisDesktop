@@ -2,7 +2,7 @@ var Chapter = BaseModel.extend({
 	defaults : {
         'chapter_no' : null,
         'title' : null,
-        'hasises' : null // HadisCollection()
+        'hadises' : null // HadisCollection()
     },
 
     loadHadis: function  () {
@@ -10,7 +10,7 @@ var Chapter = BaseModel.extend({
 		chapterHadis.fetch({async: false, data:{chapter_id: this.id}});
 
 		this.set('hadises', chapterHadis);
-		return this;	
+		return this;
     },
 
     parse: function (response, options) {

@@ -1,6 +1,4 @@
-<?php
-header("Content-type: text/plain;charset=utf-8");
-?>
+<?php header("Content-type: text/plain;charset=utf-8"); ?>
 <!DOCTYPE html>
 <html class="no-js">
     <head>
@@ -29,25 +27,16 @@ header("Content-type: text/plain;charset=utf-8");
                     <div class="nav-collapse collapse">
                         
                         <form class="navbar-search pull-right" id="search">
-                            <input class="search-query span2" id="q" type="text" placeholder="Search">
+                            <input class="search-query span2" id="q" name="q" type="text" placeholder="Search" tabindex="-1">
                             <ul class="nav pull-right">
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search in<b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#"><i class="icon-check"></i> All Books</a></li>
+                                    <ul class="dropdown-menu" style="width: 200px">
+                                        <li><label class="checkbox"><input class="search-in uniform" name="books[]" type="checkbox" checked="checked" value="all">All Books</label></li>
                                         <li class="divider"></li>                                    
                                         <li class="nav-header">Authentic 6</li>
-                                        <li><a href="#"><i class="icon-check-empty"></i> Sahih al-Bukhari</a></li>
-                                        <li><a href="#"><i class="icon-check-empty"></i> Sahih Muslim</a></li>
-                                        <li><a href="#"><i class="icon-check-empty"></i> Sunan an-Nasa'i</a></li>
-                                        <li><a href="#"><i class="icon-check-empty"></i> Sunane Abi Dawud</a></li>
-                                        <li><a href="#"><i class="icon-check-empty"></i> Jami` at-Tirmidhi</a></li>
-                                        <li><a href="#"><i class="icon-check-empty"></i> Sunan Ib'n Majah</a></li>
-                                        <li class="divider"></li>
-                                        <li class="nav-header">Other</li>
-                                        <li><a href="#"><i class="icon-check-empty"></i> 40 Hadith Nawawi</a></li>
-                                        <li><a href="#"><i class="icon-check-empty"></i> Riyad as-Salihin</a></li>
-                                        <li><a href="#"><i class="icon-check-empty"></i> Bulugh al-Maram</a></li>
+                                        <li><label class="checkbox"><input class="search-in uniform" name="books[]" type="checkbox" value="1">Sahih al-Bukhari</label></li>
+                                        <li><label class="checkbox"><input class="search-in uniform" name="books[]" type="checkbox" value="2">Sahih Muslim</label></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -63,27 +52,14 @@ header("Content-type: text/plain;charset=utf-8");
 					<div class="widget" id="langs">
 						<h3 class="title">Language</h3>
                         <form>
-                            <label class="checkbox"><input class="language uniform" type="checkbox" checked="checked" value="bn">Bangla <span class="bangla">(বাংলা)</span></label>
-                            <label class="checkbox"><input class="language uniform" type="checkbox" value="ar">Arabic <span class="bangla">(আরবি)</span></label>
+                            <label class="checkbox"><input class="language uniform" type="checkbox" checked="checked" value="bn">Bangla <span class="bn">(বাংলা)</span></label>
+                            <label class="checkbox"><input class="language uniform" type="checkbox" value="ar">Arabic <span class="bn">(আরবি)</span></label>
                             <label class="checkbox"><input class="language uniform" type="checkbox" value="en">English</label>
                       </form>
 					</div>
 
-                    <div class="widget">
-                        <h3 class="title">Go To</h3>
-                        <form id="goto">
-                            <select id="goto-book" class="uniform">
-                                <option>Sahih al-Bukhari</option>
-                                <option>Sahih Muslim</option>
-                                <option>Sunan an-Nasa'i</option>
-                                <option>Sunane Abi Dawud</option>
-                                <option>Jami` at-Tirmidhi</option>
-                                <option>Sunan Ib'n Majah</option>
-                            </select>
+                    <div class="widget" id="goto"></div>
 
-                            <input id="goto-no" class="uniform" placeholder="Hadith No.">
-                      </form>
-                    </div>
                     <div class="widget">
                         <h3 class="title">Bookmarks</h3>
                         <p>
@@ -130,27 +106,21 @@ header("Content-type: text/plain;charset=utf-8");
             </footer>
 
         </div> <!-- /container -->
-
         <script src="js/vendor/jquery-1.9.1.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/vendor/jquery.uniform.min.js"></script>
         <script src="js/vendor/underscore.min.js"></script>
         <script src="js/vendor/backbone.min.js"></script>
+        <script src="js/helpers.js"></script>
         <script src="js/Templates.js"></script>
 
-        <script src="js/models/base_model.js"></script>
-        <script src="js/models/book.js"></script>
-        <script src="js/models/chapter.js"></script>
-        <script src="js/models/hadis.js"></script>
+        <script type="text/javascript"> loadJSDirectory('models'); </script>
         <script src="js/collections.js"></script>
+        <script src="js/db.js"></script>
         <script src="js/sync.js"></script>
 
-
-        <script src="js/views/base_view.js"></script>
-        <script src="js/views/dashboard.js"></script>
-        <script src="js/views/chapter.js"></script>
-        <script src="js/views/book.js"></script>
-
+        <script type="text/javascript"> loadJSDirectory('views'); </script>
+        <script type="text/javascript"> loadJSDirectory('features'); </script>
         <script src="js/router.js"></script>
         <script src="js/app.js"></script>
         <script src="js/main.js"></script>

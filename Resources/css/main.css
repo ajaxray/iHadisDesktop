@@ -4,73 +4,67 @@
 /* Theme base Colors 
  * https://kuler.adobe.com/Birdfolio-Blues-color-theme-1945976/
  */
+@font-face {
+  font-family: kalpurush;
+  font-weight: normal;
+  font-style: normal;
+  src: url("../font/kalpurush.svg#Kalpurush") format("svg"); }
+
 body {
   padding-top: 80px;
   padding-bottom: 60px;
   color: #2b3a42;
   background-color: #efefef;
-  background-image: url(../img/bg_green_light.jpg);
-}
+  background-image: url(../img/bg_green_light.jpg); }
 
 h1, h2, h3, h4 {
-  color: #3f5765;
-}
+  color: #3f5765; }
 
 h1 {
   color: #5792ab;
   font-size: 24px;
-  border-bottom: 1px solid #efefef;
-}
-h1 small {
-  font-size: 18px;
-}
+  border-bottom: 1px solid #efefef; }
+  h1 small {
+    font-size: 18px; }
 
 /* Layout Components { */
 #topbar {
   padding: 10px;
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2b3a42), to(#3f5765));
   background-image: linear-gradient(to bottom, #2b3a42, #3f5765);
-  background-color: #3f5765;
-}
+  background-color: #3f5765; }
 
 #sidebar {
   background-color: rgba(63, 87, 101, 0.3);
   margin: -20px;
   padding: 15px;
-  border-right: 2px solid rgba(63, 87, 101, 0.5);
-}
+  border-right: 2px solid rgba(63, 87, 101, 0.5); }
 
 #page {
-  padding-left: 20px;
-}
+  padding-left: 20px; }
 
 /* } Layout Components  */
 /* Specific Elements { */
 #goto {
-  text-align: center;
-}
-#goto #goto-no {
-  width: 161px;
-  margin-right: 9px;
-}
+  text-align: center; }
+  #goto .field {
+    width: 161px;
+    margin-right: 9px;
+    margin-top: 5px; }
 
 #search {
   position: relative;
-  padding-right: 15px;
-}
-#search #q {
-  padding-right: 90px;
-  width: 200px;
-}
-#search .nav {
-  position: absolute;
-  left: 205px;
-  z-index: 9;
-  top: -5px;
-}
-#search .dropdown-toggle {
-  background-color: transparent;
-}
+  padding-right: 15px; }
+  #search #q {
+    padding-right: 90px;
+    width: 200px; }
+  #search .nav {
+    position: absolute;
+    left: 205px;
+    z-index: 9;
+    top: -5px; }
+  #search .dropdown-toggle {
+    background-color: transparent; }
 
 /* } Specific Elements */
 .widget {
@@ -80,86 +74,110 @@ h1 small {
   padding: 20px 12px 12px;
   border-radius: 6px;
   margin: 25px 0 10px;
-  position: relative;
-}
-.widget .title {
-  position: absolute;
-  font-size: 14px;
-  top: -23px;
-  background-color: #2b3a42;
-  padding: 0px 8px;
-  line-height: 24px;
-  border-radius: 5px;
-  color: #bdd4de;
-}
-.widget form {
-  margin-bottom: 5px;
-}
+  position: relative; }
+  .widget .title {
+    position: absolute;
+    font-size: 14px;
+    top: -23px;
+    background-color: #2b3a42;
+    padding: 0px 8px;
+    line-height: 24px;
+    border-radius: 5px;
+    color: #bdd4de; }
+  .widget form {
+    margin-bottom: 5px; }
+
+#chapter-title span {
+  padding: 0 10px;
+  border-left: 1px solid lightgray; }
+  #chapter-title span:first-child {
+    border: none;
+    padding-left: 0; }
 
 #chapters {
-  clear: both;
-}
-#chapters li {
-  float: left;
-  width: 180px;
-}
-#chapters li a {
-  margin: 10px;
-  display: block;
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid rgba(189, 212, 222, 0.8);
-  background-color: rgba(189, 212, 222, 0.4);
-  color: #3f5765;
-  text-align: center;
-  text-decoration: none;
-}
-#chapters li a span {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  display: block;
-  border-top: 1px dashed gray;
-  padding: 3px;
-}
-#chapters li a span:first-child {
-  padding-top: 0;
-  border-top: none;
-}
-#chapters li a span:last-child {
-  padding-bottom: 0;
-}
-#chapters li :hover {
-  background-color: #3f5765;
-  color: #efefef;
-}
+  clear: both; }
+  #chapters li {
+    float: left;
+    width: 180px; }
+    #chapters li a {
+      margin: 10px;
+      display: block;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(189, 212, 222, 0.8);
+      background-color: rgba(189, 212, 222, 0.4);
+      color: #3f5765;
+      text-align: center;
+      text-decoration: none; }
+      #chapters li a span {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: block;
+        border-top: 1px dashed gray;
+        padding: 3px; }
+        #chapters li a span:first-child {
+          padding-top: 0;
+          border-top: none; }
+        #chapters li a span:last-child {
+          padding-bottom: 0; }
+    #chapters li :hover {
+      background-color: #3f5765;
+      color: #efefef; }
 
-.bangla {
+#hadises {
+  clear: both; }
+  #hadises li {
+    margin: 15px 10px;
+    padding: 25px 10px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(189, 212, 222, 0.5);
+    background-color: rgba(189, 212, 222, 0.3);
+    color: #3f5765;
+    position: relative;
+    overflow: hidden; }
+    #hadises li .reference {
+      position: absolute;
+      display: inline-block;
+      top: -3px;
+      left: 15px;
+      padding: 6px 5px 3px;
+      background-color: rgba(189, 212, 222, 0.5);
+      border-radius: 3px;
+      font-size: 85%;
+      color: gray; }
+    #hadises li span {
+      width: 100%;
+      display: block;
+      border-bottom: 1px dashed lightgray;
+      padding: 5px 3px; }
+      #hadises li span:first-child {
+        padding-top: 0; }
+      #hadises li span:last-child {
+        padding-bottom: 0;
+        border-bottom: none; }
+
+.bn {
   font-family: Arial;
-}
+  font-size: 110%; }
 
-.arabic {
+.ar {
   font-family: Vardana;
-  direction: rtl;
-}
+  direction: rtl; }
 
 .hero-unit {
   background-color: rgba(200, 200, 200, 0.4);
-  padding: 30px;
-}
+  padding: 30px; }
 
 .nav .hint {
   color: #888;
-  padding: 10px 5px 10px 15px;
-}
+  padding: 10px 5px 10px 15px; }
 .nav .v-divider {
   padding: 20px 0;
-  border-right: 1px inset;
-}
+  border-right: 1px inset; }
 
 .navbar-inverse .brand {
   color: #efefef;
   font-weight: bold;
-  margin-left: -6px;
-}
+  margin-left: -6px; }

@@ -1,0 +1,12 @@
+<h3 class="title">Go To</h3>
+<form id="goto-form">
+    <select name="book_id" class="uniform bn">
+        <% books.each(function(book) { %>            
+            <option value="<%= book.id %>"><%= book.get('title') %></option>
+        <% }); %>
+    </select>
+
+    <input id="serial_no" name="serial_no" class="uniform field" placeholder="Hadith No."><br />
+    <a href="javascript:;" id="goto-perform" class="btn btn-info field" style="width:145px"><i class="icon-book icon-white"></i> Find </a>
+
+</form>
