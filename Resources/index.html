@@ -20,58 +20,63 @@
         <![endif]-->
 
         <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner" id="topbar">
-                    <a class="brand" href="#">iHadith</a>
-                    <div class="nav-collapse collapse">
-                        
-                        <form class="navbar-search pull-right" id="search">
-                            <input class="search-query span2" id="q" name="q" type="text" placeholder="Search" tabindex="-1">
-                            <ul class="nav pull-right">
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search in<b class="caret"></b></a>
-                                    <ul class="dropdown-menu" style="width: 200px">
-                                        <li><label class="checkbox"><input class="search-in uniform" name="books[]" type="checkbox" checked="checked" value="all">All Books</label></li>
-                                        <li class="divider"></li>                                    
-                                        <li class="nav-header">Authentic 6</li>
-                                        <li><label class="checkbox"><input class="search-in uniform" name="books[]" type="checkbox" value="1">Sahih al-Bukhari</label></li>
-                                        <li><label class="checkbox"><input class="search-in uniform" name="books[]" type="checkbox" value="2">Sahih Muslim</label></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </form>
-                    </div><!--/.nav-collapse -->
-                </div>
+                <a class="brand" href="#dashboard">iHadith</a>
+                <div class="nav-collapse collapse">
+                    
+                    <form class="navbar-search pull-right" id="search">
+                        <input class="search-query span2" id="q" name="q" type="text" placeholder="Search" tabindex="-1">
+                        <ul class="nav pull-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search in<b class="caret"></b></a>
+                                <ul class="dropdown-menu" style="width: 200px">
+                                    <li><label class="checkbox"><input class="search-in uniform" name="all_books" id="all_books" type="checkbox" checked="checked" value="all">All Books</label></li>
+                                    <li class="divider"></li>                                    
+                                    <li class="nav-header">Authentic 6</li>
+                                    <li><label class="checkbox"><input class="search-in uniform book" name="books[]" type="checkbox" value="1">Sahih al-Bukhari</label></li>
+                                    <li><label class="checkbox"><input class="search-in uniform book" name="books[]" type="checkbox" value="2">Sahih Muslim</label></li>
+                                    <li class="divider"></li>                                    
+                                    <li class="nav-header">Language</li>
+                                    <li><label class="radio"><input class="search-lang uniform" name="lang" type="radio" value="bn" checked="checked">Bangla</label>
+                                    </li><li><label class="radio"><input class="search-lang uniform" name="lang" type="radio" value="en">English</label></li>
+                                    <li><label class="radio"><input class="search-lang uniform" name="lang" type="radio" value="ar">Arabic</label></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </form>
+                </div><!--/.nav-collapse -->
             </div>
         </div>
+        
 
         <div class="container-fluid" id="main">
             <div class="row-fluid">
                 <div class="span3" id="sidebar">
-					<div class="widget" id="langs">
-						<h3 class="title">Language</h3>
-                        <form>
-                            <label class="checkbox"><input class="language uniform" type="checkbox" checked="checked" value="bn">Bangla <span class="bn">(বাংলা)</span></label>
-                            <label class="checkbox"><input class="language uniform" type="checkbox" value="ar">Arabic <span class="bn">(আরবি)</span></label>
-                            <label class="checkbox"><input class="language uniform" type="checkbox" value="en">English</label>
-                      </form>
-					</div>
+                    <div data-spy="affix" style="width:19.6%">
+    					<div class="widget" id="langs">
+    						<h3 class="title">Language</h3>
+                            <form>
+                                <label class="checkbox"><input class="language uniform" type="checkbox" checked="checked" value="bn">Bangla <span class="bn">(বাংলা)</span></label>
+                                <label class="checkbox"><input class="language uniform" type="checkbox" value="ar">Arabic <span class="bn">(আরবি)</span></label>
+                                <label class="checkbox"><input class="language uniform" type="checkbox" value="en">English</label>
+                          </form>
+    					</div>
 
-                    <div class="widget" id="goto"></div>
+                        <div class="widget" id="goto"></div>
 
-                    <div class="widget">
-                        <h3 class="title">Bookmarks</h3>
-                        <p>
-                            <ul class="unstyled">
-                                <li><i class="icon-bookmark"></i><a href="#">Sahih al-Bukhari <span class="badge badge-info">28</span></a></li>
-                                <li><i class="icon-bookmark"></i><a href="#">Sahih Muslim <span class="badge badge-info">8</span></a></li>
-                                <li><i class="icon-bookmark"></i><a href="#">Sunan an-Nasa'i <span class="badge badge-info">2</span></a></li>
-                                <li><i class="icon-bookmark"></i><a href="#">Sunane Abi Dawud <span class="badge badge-info">13</span></a></li>
-                            </ul>
-                        </p>
-                    </div>
-              		
+                        <div class="widget">
+                            <h3 class="title">Bookmarks</h3>
+                            <p>
+                                <ul class="unstyled">
+                                    <li><i class="icon-bookmark"></i><a href="#">Sahih al-Bukhari <span class="badge badge-info">28</span></a></li>
+                                    <li><i class="icon-bookmark"></i><a href="#">Sahih Muslim <span class="badge badge-info">8</span></a></li>
+                                    <li><i class="icon-bookmark"></i><a href="#">Sunan an-Nasa'i <span class="badge badge-info">2</span></a></li>
+                                    <li><i class="icon-bookmark"></i><a href="#">Sunane Abi Dawud <span class="badge badge-info">13</span></a></li>
+                                </ul>
+                            </p>
+                        </div>
+              		</div>
                 </div>
 
                 <div class="span9" id="page">

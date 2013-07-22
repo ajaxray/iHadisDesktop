@@ -50,9 +50,7 @@ var BackboneDb = function() {
 
         search: function(table, conditions) {
             var query = 'SELECT * FROM '+ table + buildWhere(conditions);
-            var resultJSON = BackboneDb.resultToJSON(App.db.execute(query));
-
-            return resultJSON;
+            return getJSONResult(query);
         }
     };
 

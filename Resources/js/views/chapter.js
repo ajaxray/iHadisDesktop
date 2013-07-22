@@ -5,10 +5,7 @@ var ChapterView = BaseView.extend({
     },
 
     render: function() {
-		var book = App.openBook;
-		var data = _.extend(this.model.toJSON(), {book_title: book.get('title'), book_id: book.get('id')});
-
-        $(this.el).html(_.template(Templates.chapter, data));
+        $(this.el).html(_.template(Templates.chapter, this.model.toJSON()));
         return this;
     }
 

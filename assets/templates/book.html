@@ -3,7 +3,7 @@
 	<% obj.chapters.each(function(chapter) { %>
 	<li>
         <a href="#chapter/<%= chapter.get('id') %>">
-        	<%= App.printInActiveLang(chapter.get('title')) %>
+        	<%= App.printInActiveLang(chapter.attributes, 'title_') %>
         </a>
     </li>
 	<% }); %>

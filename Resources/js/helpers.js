@@ -29,8 +29,22 @@ function getBook(id) {
 
 function serialArrToObj(dataArr) {
 	var data = {};
-	_.each(dataArr, function(item) { data[item.name] = item.value; });
+	_.each(dataArr, function(item) {
+		if(item.name.substr(-2, 2) == '[]') { // Array field
+			var arrName = item.name.slice(0, -2);
+			if(typeof data[arrName] !== 'object') data[arrName] = [];
+
+			data[arrName].push(item.value);
+		} else {
+			data[item.name] = item.value;
+		}
+	});
+
 	return data;
+}
+
+function getJSONResult(query) {
+	return BackboneDb.resultToJSON(App.db.execute(query));
 }
 
 function num(val) {

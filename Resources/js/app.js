@@ -73,19 +73,24 @@ var App = function() {
 				blocks.page.html(view);
 			}
 			this.reloadFonts();
+			fullheightSidebar();
 		},
 
-		printInActiveLang: function(data) {
+		printInActiveLang: function(data, prefix) {
 			var output = '';
+			var format = '<span class="<%= l %>"><%= d[l] %></span>';
 
+			prefix = prefix || 'content_';
+			console.log(data);
 			_.each(this.activeLangs, function(lang) {
-				if(_.contains(_.keys(data), lang)) {
-					output += _.template('<span class="<%= l %>"><%= d[l] %></span>', {d: data, l: lang});
+				if(_.contains(_.keys(data), prefix+lang)) {
+					output += _.template(format, {d: data, l: prefix+lang});
 				}
 			});
-			return output;
 
+			return output;
 		},
+
 		reloadFonts: function() {
 			$('.bn').css('font-family', 'kalpurush');
 		}

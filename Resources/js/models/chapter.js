@@ -11,11 +11,5 @@ var Chapter = BaseModel.extend({
 
 		this.set('hadises', chapterHadis);
 		return this;
-    },
-
-    parse: function (response, options) {
-		response = this.groupLangField(response, 'title');
-
-		return response;
     }
 });

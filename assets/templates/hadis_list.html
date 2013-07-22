@@ -1,8 +1,15 @@
-<ul class="unstyled" id="hadises">
-	<% hadises.each(function(hadis) { %>
-	<li>
-		<div class="reference"><span class="bn"><%= getBook(hadis.get('book_id')).get('title') +' ► '+ num(hadis.get('serial_no')) %></span></div>
-    	<%= App.printInActiveLang(hadis.get('content')) %>
-    </li>
-	<% }); %>
-</ul>
+<% if(hadises.length > 0) { %>
+	<ul class="unstyled" id="hadises">
+		<% hadises.each(function(hadis) { %>
+		<li>
+			<div class="reference"><span class="bn"><%= getBook(hadis.get('book_id')).get('title') +' ► '+ num(hadis.get('serial_no')) %></span></div>
+	    	<%= App.printInActiveLang(hadis.attributes) %>
+	    </li>
+		<% }); %>
+	</ul>
+<% } else { %>
+	<div class="alert alert-block">
+	  <h4>দুঃখিত!</h4>
+	  আপনি যে শব্দ দিয়ে খুঁজ্ছেন তা কোন হাদীসের সাথে মেলেনি। অন্য শব্দ বা ভিন্ন বানান দিয়ে চেষ্টা করুন। 
+	</div>
+<% }  %>

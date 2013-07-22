@@ -3,17 +3,13 @@ var Hadis = BaseModel.extend({
         'book' : null,
         'chapter' : null,
         'serial' : null,
-        'ifa_serial' : null,
-        'body' : {
-			'bn' : '',
-			'en' : ''
-        }
-    },
-
-    parse: function (response, options) {
-        response = this.groupLangField(response, 'content');
-
-        return response;
+        'ifa_serial' : null
     }
+
+    // parse: function (response, options) {
+    //     response = this.groupLangField(response, 'content');
+
+    //     return response;
+    // }
 
 });

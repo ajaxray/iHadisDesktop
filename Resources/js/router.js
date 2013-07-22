@@ -4,6 +4,7 @@ var AppRouter = Backbone.Router.extend({
 
     routes: {
         ''              : 'dashboard',
+        'dashboard'     : 'dashboard',
         'book/:id'      : 'openBook',
         'chapter/:id'   : 'openChapter'
         //'bookmarks/:book_id':
